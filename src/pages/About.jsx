@@ -1,16 +1,16 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import HomeBody from "../components/HomeBody";
+import Body from "../components/HomeBody";
 
-const Home = () => {
+const About = () => {
   return (
     <>
       <Header />
-      <HomeBody />
+      <Body />
       <Footer />
     </>
   );
 };
 
-export default Home;
+export default About;

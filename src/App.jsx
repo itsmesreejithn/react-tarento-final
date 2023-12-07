@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/Home";
+import About from "./pages/About";
 import { Container } from "react-bootstrap";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
         </Routes>
       </BrowserRouter>
     </Container>
