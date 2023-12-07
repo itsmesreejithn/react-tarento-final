@@ -5,7 +5,7 @@ import cartoon from "../assets/cartoon.jpg";
 const HomeBody = () => {
   return (
     <Container className="body-container p-0">
-      <Row className="mt-3 mb-3">
+      <Row>
         <Col>
           <Card className="px-4">
             <Card.Body>

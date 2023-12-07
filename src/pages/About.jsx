@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Body from "../components/HomeBody";
+import AboutBody from "../components/AboutBody";
 
 const About = () => {
   return (
     <>
       <Header />
-      <Body />
+      <AboutBody />
       <Footer />
     </>
   );
