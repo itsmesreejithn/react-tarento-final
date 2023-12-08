@@ -19,6 +19,9 @@ const Header = () => {
             <Link to="/reviews" className="nav-link">
               Reviews
             </Link>
+            <Link to="/passwords" className="nav-link">
+              Passwords
+            </Link>
             <Link to="/login" className="btn btn-outline-primary">
               Login
             </Link>
