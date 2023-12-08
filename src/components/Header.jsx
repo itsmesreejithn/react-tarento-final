@@ -4,7 +4,13 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary" sticky="top">
+    <Navbar
+      expand="lg"
+      className="bg-body-tertiary"
+      sticky="top"
+      bg="dark"
+      data-bs-theme="dark"
+    >
       <Container>
         <Navbar.Brand>Keep Safe</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
