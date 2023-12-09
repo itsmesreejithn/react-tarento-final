@@ -1,7 +1,18 @@
 import React from "react";
+import { Card, Container, Row } from "react-bootstrap";
 
 const ListPasswrods = () => {
-  return <div>ListPasswrods</div>;
+  return (
+    <Container>
+      <Row>
+        <Col>
+          <Card>
+            <Card.Body></Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
+  );
 };
 
 export default ListPasswrods;
