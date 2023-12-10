@@ -1,5 +1,5 @@
 import { selector } from "recoil";
-import { isUserAuthenticatedAtom, passwordsAtom } from "./atoms";
+import { isUserAuthenticatedAtom, passwordsAtom, reviewAtom } from "./atoms";
 
 export const appendPasswordsSelector = selector({
     key: 'appendPasswordsSelector',
@@ -18,5 +18,14 @@ export const isUserAuthenticatedSelector = selector({
 
     set: ({set}, isUserAuthenticated) => {
         set(isUserAuthenticatedAtom, isUserAuthenticated);
+    }
+})
+
+export const appendReviewsSelector = selector({
+    key: "appendReviewsSelector",
+    get: ({get}) => get(reviewAtom),
+
+    set:({set}, newReview) => {
+        set(reviewAtom, (prevReview) => [...prevReview, newReview]);
     }
 })

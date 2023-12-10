@@ -23,3 +23,11 @@ export const userDataAtom = atom({
         password: "mypassword",
     }
 })
+
+export const reviewAtom = atom({
+    key: "reviewAtom",
+    default: [{
+        userName: "Roshan",
+        content: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi magni aperiam nulla praesentium vero veniam asperiores nesciunt nemo ipsum corporis!"
+    }]
+})

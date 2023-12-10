@@ -5,7 +5,7 @@ import cartoon from "../assets/cartoon.jpg";
 const HomeBody = () => {
   return (
     <Container className="body-container p-0">
-      <Row>
+      <Row className="py-3">
         <Col>
           <Card className="px-4">
             <Card.Body>
@@ -16,7 +16,12 @@ const HomeBody = () => {
               deserunt temporibus modi sint! Minima qui necessitatibus similique
               enim nesciunt sed, fuga exercitationem nemo cupiditate?
             </Card.Body>
-            <Card.Img variant="bottom" src={cartoon} alt="cartoon" />
+            <Card.Img
+              variant="bottom"
+              src={cartoon}
+              alt="cartoon"
+              style={{ height: 700 }}
+            />
           </Card>
         </Col>
       </Row>

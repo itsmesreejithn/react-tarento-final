@@ -9,6 +9,7 @@ import Passwords from "./pages/Passwords";
 import PrivateRouter from "./components/PrivateRouter";
 import { useRecoilValue } from "recoil";
 import { isUserAuthenticatedAtom } from "./states/atoms";
+import Reviews from "./pages/Reviews";
 
 function App() {
   const isUserAuthenticated = useRecoilValue(isUserAuthenticatedAtom);
@@ -27,6 +28,7 @@ function App() {
               </PrivateRouter>
             }
           />
+          <Route path="reviews" element={<Reviews />} />
         </Routes>
       </BrowserRouter>
     </Container>
