@@ -1,8 +1,21 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useRecoilCallback, useRecoilValue } from "recoil";
+import { isUserAuthenticatedAtom } from "../states/atoms";
+import { isUserAuthenticatedSelector } from "../states/selector";
 
 const Header = () => {
+  const isUserAuthenticated = useRecoilValue(isUserAuthenticatedAtom);
+  const logout = useRecoilCallback(({ set }) => (navigationValue) => {
+    set(isUserAuthenticatedSelector, navigationValue);
+  });
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    logout(false);
+    navigate("/");
+  };
+
   return (
     <Navbar
       expand="lg"
@@ -28,9 +41,15 @@ const Header = () => {
             <Link to="/passwords" className="nav-link">
               Passwords
             </Link>
-            <Link to="/login" className="btn btn-outline-primary">
-              Login
-            </Link>
+            {!isUserAuthenticated ? (
+              <Link to="/login" className="btn btn-outline-primary">
+                Login
+              </Link>
+            ) : (
+              <Link className="btn btn-outline-danger" onClick={handleLogout}>
+                Logout
+              </Link>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

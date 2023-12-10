@@ -10,3 +10,16 @@ export const passwordsAtom = atom({
         }
     ]
 });
+
+export const isUserAuthenticatedAtom = atom({
+    key: "isUserAuthenticatedAtom",
+    default: false,
+});
+
+export const userDataAtom = atom({
+    key: "userDataAtom",
+    default: {
+        email: "rudra.pratap@yahoo.com",
+        password: "mypassword",
+    }
+})

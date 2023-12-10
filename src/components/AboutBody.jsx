@@ -3,11 +3,11 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 
 const AboutBody = () => {
   return (
-    <Container className="body-container p-0">
+    <Container className="body-container">
       <Row>
-        <Col>
+        <Col className="py-5">
           <Card className="px-4">
-            <Card.Body>
+            <Card.Body className="lh-lg font-monospace fs-3">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
               explicabo molestiae esse voluptatibus. Iusto similique animi quae
               laborum minus. Quidem, accusantium in mollitia doloribus eos autem
