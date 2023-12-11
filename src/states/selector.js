@@ -12,6 +12,18 @@ export const appendPasswordsSelector = selector({
 
 })
 
+export const deletePasswordsSelector = selector({
+    key: "deletePasswordsSelector",
+    get: ({get}) => get(passwordsAtom),
+    set: ({set}, index) => {
+        set(passwordsAtom, (prevPasswords) => {
+            const updatedPasswords = [...prevPasswords];
+            updatedPasswords.splice(index, 1);
+            return updatedPasswords;
+        });
+    }
+})
+
 export const isUserAuthenticatedSelector = selector({
     key: 'isUserAuthenticatedSelector',
     get: ({get}) => get(isUserAuthenticatedAtom),
