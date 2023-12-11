@@ -1,11 +1,17 @@
 import React from "react";
 import { Card, Row, Col, Button } from "react-bootstrap";
-import { useRecoilValue } from "recoil";
+import { useRecoilCallback, useRecoilValue } from "recoil";
 import { passwordsAtom } from "../states/atoms";
+import { deletePasswordsSelector } from "../states/selector";
 
 const ListPasswrods = () => {
   const passwordList = useRecoilValue(passwordsAtom);
-  const deletePassword = () => {};
+  const deletePasswordVaue = useRecoilCallback(({ set }) => (index) => {
+    set(deletePasswordsSelector, index);
+  });
+  const deletePassword = (index) => {
+    deletePasswordVaue(index);
+  };
   return (
     <>
       {passwordList.map((passwords, index) => (
@@ -19,7 +25,10 @@ const ListPasswrods = () => {
                 <br />
                 Password: {passwords.password}
                 <br />
-                <Button variant="outline-danger" onClick={deletePassword}>
+                <Button
+                  variant="outline-danger"
+                  onClick={() => deletePassword(index)}
+                >
                   Delete
                 </Button>
               </Card.Body>
